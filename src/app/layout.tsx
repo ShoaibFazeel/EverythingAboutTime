@@ -30,6 +30,21 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q120BKTZF7"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Q120BKTZF7');`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         <Header />
         <main className="flex-1 flex flex-col pt-8 pb-16">
