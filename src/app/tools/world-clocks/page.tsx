@@ -1,7 +1,7 @@
 import WorldClocks from "@/components/tools/WorldClocks";
 
 export const metadata = {
-  title: "World Clocks | Everything about time",
+  title: "World Clocks | Everything About Time",
   description: "A fast, modern world clocks tool to observe and sync multiple time zones simultaneously.",
 };
 

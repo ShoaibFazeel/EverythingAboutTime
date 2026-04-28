@@ -1,7 +1,7 @@
 import PomodoroTimer from "@/components/tools/PomodoroTimer";
 
 export const metadata = {
-  title: "Pomodoro Timer | Everything about time",
+  title: "Pomodoro Timer | Everything About Time",
   description: "A minimal Pomodoro interval timer for tracking focus sessions and breaks.",
 };
 

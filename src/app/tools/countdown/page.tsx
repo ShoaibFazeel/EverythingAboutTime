@@ -1,7 +1,7 @@
 import CountdownTimer from "@/components/tools/CountdownTimer";
 
 export const metadata = {
-  title: "Countdown Timer | Everything about time",
+  title: "Countdown Timer | Everything About Time",
   description: "Live countdown timer to a specific future date and time.",
 };
 

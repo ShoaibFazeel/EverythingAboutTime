@@ -1,7 +1,7 @@
 import UnixTime from "@/components/tools/UnixTime";
 
 export const metadata = {
-  title: "Unix Timestamp | Everything about time",
+  title: "Unix Timestamp | Everything About Time",
   description: "Live Unix timestamp, convert Unix to human date, and human date to Unix timestamp instantly.",
 };
 

@@ -1,7 +1,7 @@
 import AddSubtractTime from "@/components/tools/AddSubtractTime";
 
 export const metadata = {
-  title: "Add/Subtract Time | Everything about time",
+  title: "Add/Subtract Time | Everything About Time",
   description: "Easily add or subtract years, months, days, and times to a given date.",
 };
 

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Everything about time - Productivity Suite",
+  title: "Everything About Time - Productivity Suite",
   description: "Advanced productivity tools for developers and creators. Unix timestamp converter, time difference, age calculator, and more.",
 };
 

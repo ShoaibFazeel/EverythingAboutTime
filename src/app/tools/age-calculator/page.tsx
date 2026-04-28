@@ -1,7 +1,7 @@
 import AgeCalculator from "@/components/tools/AgeCalculator";
 
 export const metadata = {
-  title: "Age Calculator | Everything about time",
+  title: "Age Calculator | Everything About Time",
   description: "Calculate your exact age and find out how many days until your next birthday.",
 };
 

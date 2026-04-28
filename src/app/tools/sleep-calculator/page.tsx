@@ -2,7 +2,7 @@ import SleepCalculator from "@/components/tools/SleepCalculator";
 import FaqSchema from "@/components/SEO/FaqSchema";
 
 export const metadata = {
-  title: "Sleep Cycle Calculator | Everything about time",
+  title: "Sleep Cycle Calculator | Everything About Time",
   description: "Find your optimal bedtimes and wake times based on natural 90-minute sleep cycles.",
 };
 
