@@ -1,8 +1,15 @@
 import StudyTimer from "@/components/tools/StudyTimer";
 
 export const metadata = {
-  title: "Study Timer & Stopwatch | Everything About Time",
-  description: "Advanced stopwatch and session tracker to help you focus and log your study sessions.",
+  title: "Study Timer | Session Stopwatch for Students",
+  description:
+    "Track deep work and study sessions with a simple online stopwatch. Save focused sessions and stay consistent with your learning goals.",
+  keywords: [
+    "study timer",
+    "study stopwatch",
+    "session tracker",
+    "focus timer",
+  ],
 };
 
 export default function Page() {

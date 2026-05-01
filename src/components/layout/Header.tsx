@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Clock } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
@@ -14,7 +14,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-background/70 backdrop-blur-xl border-b border-foreground/10">
       <div className="container mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2 text-foreground">
-          <Clock className="w-6 h-6 text-primary" />
+          <Image
+            src="/time-is-money.png"
+            alt="EverythingAboutTime-logo"
+            width={28}
+            height={28}
+            className="rounded-sm"
+            priority
+          />
           <span className="font-bold text-xl tracking-tight">EverythingAboutTime</span>
         </Link>
         <nav className="flex space-x-2 text-sm font-medium">

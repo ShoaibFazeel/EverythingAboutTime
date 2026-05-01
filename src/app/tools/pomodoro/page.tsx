@@ -1,8 +1,15 @@
 import PomodoroTimer from "@/components/tools/PomodoroTimer";
 
 export const metadata = {
-  title: "Pomodoro Timer | Everything About Time",
-  description: "A minimal Pomodoro interval timer for tracking focus sessions and breaks.",
+  title: "Pomodoro Timer | Focus & Study Tool",
+  description:
+    "Boost your productivity with our free online Pomodoro timer. Perfect for students and professionals using the 25-minute focus technique.",
+  keywords: [
+    "pomodoro timer",
+    "study timer",
+    "focus tool",
+    "productivity timer",
+  ],
 };
 
 export default function Page() {
