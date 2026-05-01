@@ -1,8 +1,15 @@
 import CountdownTimer from "@/components/tools/CountdownTimer";
 
 export const metadata = {
-  title: "Countdown Timer | Everything About Time",
-  description: "Live countdown timer to a specific future date and time.",
+  title: "Countdown Timer | Online Event Countdown",
+  description:
+    "Create a live countdown to any future date and time. Perfect for exams, launches, events, deadlines, and special occasions.",
+  keywords: [
+    "countdown timer",
+    "event countdown",
+    "deadline timer",
+    "online countdown",
+  ],
 };
 
 export default function Page() {

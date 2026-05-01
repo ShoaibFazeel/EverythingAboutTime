@@ -16,13 +16,13 @@ export default function Header() {
         <Link href="/" className="flex items-center space-x-2 text-foreground">
           <Image
             src="/time-is-money.png"
-            alt="Everything About Time logo"
+            alt="EverythingAboutTime-logo"
             width={28}
             height={28}
             className="rounded-sm"
             priority
           />
-          <span className="font-bold text-xl tracking-tight">Everything About Time</span>
+          <span className="font-bold text-xl tracking-tight">EverythingAboutTime</span>
         </Link>
         <nav className="flex space-x-2 text-sm font-medium">
           <Link

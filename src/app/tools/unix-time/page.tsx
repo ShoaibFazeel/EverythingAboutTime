@@ -1,8 +1,15 @@
 import UnixTime from "@/components/tools/UnixTime";
 
 export const metadata = {
-  title: "Unix Timestamp | Everything About Time",
-  description: "Live Unix timestamp, convert Unix to human date, and human date to Unix timestamp instantly.",
+  title: "Unix Timestamp Converter | Epoch Time Tool",
+  description:
+    "Get the live Unix timestamp and instantly convert Unix epoch time to human-readable date and date to Unix time.",
+  keywords: [
+    "unix timestamp",
+    "epoch converter",
+    "unix time converter",
+    "timestamp to date",
+  ],
 };
 
 export default function Page() {

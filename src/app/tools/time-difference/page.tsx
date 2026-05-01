@@ -1,8 +1,15 @@
 import TimeDifference from "@/components/tools/TimeDifference";
 
 export const metadata = {
-  title: "Time Difference Calculator | Everything About Time",
-  description: "Calculate the exact duration between any two dates and times.",
+  title: "Time Difference Calculator | Date Duration Tool",
+  description:
+    "Calculate the exact difference between two dates and times in years, months, days, hours, minutes, and seconds.",
+  keywords: [
+    "time difference calculator",
+    "date difference",
+    "duration calculator",
+    "time interval",
+  ],
 };
 
 export default function Page() {

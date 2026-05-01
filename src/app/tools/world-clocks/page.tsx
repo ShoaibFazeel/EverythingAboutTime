@@ -1,8 +1,15 @@
 import WorldClocks from "@/components/tools/WorldClocks";
 
 export const metadata = {
-  title: "World Clocks | Everything About Time",
-  description: "A fast, modern world clocks tool to observe and sync multiple time zones simultaneously.",
+  title: "World Clocks | Compare Time Zones Instantly",
+  description:
+    "Compare multiple world time zones in one view. Track current times across cities and plan meetings across regions easily.",
+  keywords: [
+    "world clock",
+    "time zones",
+    "global clock",
+    "timezone converter",
+  ],
 };
 
 export default function Page() {

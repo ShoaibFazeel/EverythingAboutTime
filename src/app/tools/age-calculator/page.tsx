@@ -1,8 +1,15 @@
 import AgeCalculator from "@/components/tools/AgeCalculator";
 
 export const metadata = {
-  title: "Age Calculator | Everything About Time",
-  description: "Calculate your exact age and find out how many days until your next birthday.",
+  title: "Age Calculator | Exact Age in Years, Months, Days",
+  description:
+    "Calculate exact age from date of birth and see years, months, and days instantly. Also check time remaining until your next birthday.",
+  keywords: [
+    "age calculator",
+    "calculate age",
+    "birthday calculator",
+    "dob age tool",
+  ],
 };
 
 export default function Page() {
