@@ -1,5 +1,23 @@
 import Link from "next/link";
 import { Calculator, Clock, Moon, Timer, Activity, Globe, Code } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Time Tools Suite for Productivity",
+  description:
+    "Use free online time tools including Pomodoro timer, sleep calculator, world clocks, countdown timer, Unix converter, and more.",
+  keywords: [
+    "time tools",
+    "productivity tools",
+    "pomodoro timer",
+    "sleep calculator",
+    "unix timestamp converter",
+    "world clock",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   const categories = [
