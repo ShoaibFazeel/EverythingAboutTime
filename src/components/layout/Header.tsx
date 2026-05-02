@@ -15,7 +15,7 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2 text-foreground">
           <Image
-            src="/time-is-money.png"
+            src="/timing.png"
             alt="EverythingAboutTime-logo"
             width={28}
             height={28}

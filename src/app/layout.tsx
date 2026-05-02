@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "Advanced productivity tools for developers and creators. Unix timestamp converter, time difference, age calculator, and more.",
   applicationName: "Everything About Time",
   icons: {
-    icon: "/time-is-money.png",
-    shortcut: "/time-is-money.png",
-    apple: "/time-is-money.png",
+    icon: "/timing.png",
+    shortcut: "/timing.png",
+    apple: "/timing.png",
   },
   openGraph: {
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/time-is-money.png",
+        url: "/timing.png",
         width: 1200,
         height: 630,
         alt: "Everything About Time",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Everything About Time",
     description:
       "Advanced productivity tools for developers and creators. Unix timestamp converter, time difference, age calculator, and more.",
-    images: ["/time-is-money.png"],
+    images: ["/timing.png"],
   },
   robots: {
     index: true,
@@ -81,9 +81,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/time-is-money.png" sizes="32x32" type="image/png" />
-        <link rel="shortcut icon" href="/time-is-money.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/time-is-money.png" />
+        <link rel="icon" href="/timing.png" sizes="32x32" type="image/png" />
+        <link rel="shortcut icon" href="/timing.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/timing.png" />
         {/* Google Analytics Consent & Loader */}
         <script src="/consent.js"></script>
         {/* Google tag (gtag.js) */}
@@ -94,11 +94,13 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-Q120BKTZF7');`,
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q120BKTZF7');`,
           }}
         />
+
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="pHgU/tUEXvwtMUzyAMYkBg" async></script>
       </head>
       <body
         className="min-h-full flex flex-col font-sans"
