@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/age-calculator",
   },
+  openGraph: {
+    url: "/tools/age-calculator",
+  },
 };
 
 export default function Page() {

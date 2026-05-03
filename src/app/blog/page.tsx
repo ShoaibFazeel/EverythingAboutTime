@@ -8,6 +8,9 @@ export const metadata = {
   alternates: {
     canonical: "/blog",
   },
+  openGraph: {
+    url: "/blog",
+  },
 };
 
 export default async function BlogPage() {

@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/countdown",
   },
+  openGraph: {
+    url: "/tools/countdown",
+  },
 };
 
 export default function Page() {

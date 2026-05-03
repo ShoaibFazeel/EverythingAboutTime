@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/world-clocks",
   },
+  openGraph: {
+    url: "/tools/world-clocks",
+  },
 };
 
 export default function Page() {

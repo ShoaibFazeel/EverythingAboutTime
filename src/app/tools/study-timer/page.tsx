@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/study-timer",
   },
+  openGraph: {
+    url: "/tools/study-timer",
+  },
 };
 
 export default function Page() {

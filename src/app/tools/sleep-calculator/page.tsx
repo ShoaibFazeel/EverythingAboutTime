@@ -14,6 +14,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/sleep-calculator",
   },
+  openGraph: {
+    url: "/tools/sleep-calculator",
+  },
 };
 
 const faqs = [

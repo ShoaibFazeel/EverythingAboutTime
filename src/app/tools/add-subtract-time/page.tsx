@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/add-subtract-time",
   },
+  openGraph: {
+    url: "/tools/add-subtract-time",
+  },
 };
 
 export default function Page() {

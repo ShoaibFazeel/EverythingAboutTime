@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/unix-time",
   },
+  openGraph: {
+    url: "/tools/unix-time",
+  },
 };
 
 export default function Page() {

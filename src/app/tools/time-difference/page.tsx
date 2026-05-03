@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/time-difference",
   },
+  openGraph: {
+    url: "/tools/time-difference",
+  },
 };
 
 export default function Page() {

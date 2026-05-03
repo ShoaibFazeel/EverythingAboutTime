@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `/blog/${resolvedParams.slug}`,
     },
+    openGraph: {
+      url: `/blog/${resolvedParams.slug}`,
+    },
   };
 }
 

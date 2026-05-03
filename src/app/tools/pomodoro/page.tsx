@@ -13,6 +13,9 @@ export const metadata = {
   alternates: {
     canonical: "/tools/pomodoro",
   },
+  openGraph: {
+    url: "/tools/pomodoro",
+  },
 };
 
 export default function Page() {
