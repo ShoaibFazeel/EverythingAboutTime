@@ -10,6 +10,9 @@ export const metadata = {
     "focus tool",
     "productivity timer",
   ],
+  alternates: {
+    canonical: "/tools/pomodoro",
+  },
 };
 
 export default function Page() {

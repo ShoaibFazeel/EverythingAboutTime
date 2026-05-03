@@ -5,6 +5,9 @@ import { Clock } from "lucide-react";
 export const metadata = {
   title: "Blog | Everything About Time",
   description: "Read our latest articles on sleep, productivity, and managing your time effectively.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function BlogPage() {

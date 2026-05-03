@@ -10,6 +10,9 @@ export const metadata = {
     "global clock",
     "timezone converter",
   ],
+  alternates: {
+    canonical: "/tools/world-clocks",
+  },
 };
 
 export default function Page() {

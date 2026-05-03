@@ -10,6 +10,9 @@ export const metadata = {
     "unix time converter",
     "timestamp to date",
   ],
+  alternates: {
+    canonical: "/tools/unix-time",
+  },
 };
 
 export default function Page() {

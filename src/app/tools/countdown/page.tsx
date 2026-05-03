@@ -10,6 +10,9 @@ export const metadata = {
     "deadline timer",
     "online countdown",
   ],
+  alternates: {
+    canonical: "/tools/countdown",
+  },
 };
 
 export default function Page() {

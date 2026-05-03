@@ -10,6 +10,9 @@ export const metadata = {
     "session tracker",
     "focus timer",
   ],
+  alternates: {
+    canonical: "/tools/study-timer",
+  },
 };
 
 export default function Page() {

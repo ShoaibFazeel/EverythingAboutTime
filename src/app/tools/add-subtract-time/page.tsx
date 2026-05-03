@@ -10,6 +10,9 @@ export const metadata = {
     "date add subtract",
     "time math tool",
   ],
+  alternates: {
+    canonical: "/tools/add-subtract-time",
+  },
 };
 
 export default function Page() {

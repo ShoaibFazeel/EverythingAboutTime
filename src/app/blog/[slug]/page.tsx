@@ -17,6 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.seoTitle || `${post.title} | Time is Everything`,
     description: post.seoDescription || post.excerpt,
+    alternates: {
+      canonical: `/blog/${resolvedParams.slug}`,
+    },
   };
 }
 

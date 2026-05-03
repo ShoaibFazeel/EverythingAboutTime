@@ -11,6 +11,9 @@ export const metadata = {
     "bedtime calculator",
     "wake up time",
   ],
+  alternates: {
+    canonical: "/tools/sleep-calculator",
+  },
 };
 
 const faqs = [

@@ -10,6 +10,9 @@ export const metadata = {
     "duration calculator",
     "time interval",
   ],
+  alternates: {
+    canonical: "/tools/time-difference",
+  },
 };
 
 export default function Page() {

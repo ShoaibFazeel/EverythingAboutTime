@@ -10,6 +10,9 @@ export const metadata = {
     "birthday calculator",
     "dob age tool",
   ],
+  alternates: {
+    canonical: "/tools/age-calculator",
+  },
 };
 
 export default function Page() {
