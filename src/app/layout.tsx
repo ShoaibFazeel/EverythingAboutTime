@@ -84,6 +84,8 @@ export default function RootLayout({
         <link rel="icon" href="/timing.png" sizes="32x32" type="image/png" />
         <link rel="shortcut icon" href="/timing.png" type="image/png" />
         <link rel="apple-touch-icon" href="/timing.png" />
+
+        <link rel="canonical" href="https://everythingabouttime.com/" />
         {/* Google Analytics Consent & Loader */}
         <script src="/consent.js"></script>
         {/* Google tag (gtag.js) */}
