@@ -82,6 +82,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" type="image/png" href="/timing.png" />
         {/* Google Analytics Consent & Loader */}
         <script src="/consent.js"></script>
         {/* Google tag (gtag.js) */}
