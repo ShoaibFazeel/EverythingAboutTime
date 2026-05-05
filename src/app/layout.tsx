@@ -26,8 +26,11 @@ export const metadata: Metadata = {
     "Advanced productivity tools for developers and creators. Unix timestamp converter, time difference, age calculator, and more.",
   applicationName: "Everything About Time",
   icons: {
-    icon: "/timing.png",
-    shortcut: "/timing.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/timing.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/timing.png",
   },
   openGraph: {
@@ -80,8 +83,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/timing.png" sizes="32x32" type="image/png" />
-        <link rel="shortcut icon" href="/timing.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/timing.png" />
 
         {/* Google Analytics Consent & Loader */}
