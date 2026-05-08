@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/unix-time",
   },
   openGraph: {
+    title: "Unix Timestamp Converter | Epoch Time Tool",
+    description:
+      "Get the live Unix timestamp and instantly convert Unix epoch time to human-readable date and date to Unix time.",
     url: "/tools/unix-time",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Unix Timestamp Converter Tool",
+      },
+    ],
   },
 };
 

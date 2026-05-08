@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/add-subtract-time",
   },
   openGraph: {
+    title: "Add or Subtract Time | Date Time Calculator",
+    description:
+      "Add or subtract years, months, days, hours, and minutes from any date and time with this easy online calculator.",
     url: "/tools/add-subtract-time",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Add or Subtract Time Calculator",
+      },
+    ],
   },
 };
 

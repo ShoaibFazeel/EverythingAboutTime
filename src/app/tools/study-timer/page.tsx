@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/study-timer",
   },
   openGraph: {
+    title: "Study Timer | Session Stopwatch for Students",
+    description:
+      "Track deep work and study sessions with a simple online stopwatch. Save focused sessions and stay consistent with your learning goals.",
     url: "/tools/study-timer",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Study Timer Tool",
+      },
+    ],
   },
 };
 

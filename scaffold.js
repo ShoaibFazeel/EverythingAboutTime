@@ -17,9 +17,9 @@ tools.forEach(tool => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  
+
   const content = `export const metadata = {
-  title: "${tool.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} | Time is Everything",
+  title: "${tool.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} | Everything About Time",
   description: "A fast, modern ${tool.replace('-', ' ')} tool.",
 };
 

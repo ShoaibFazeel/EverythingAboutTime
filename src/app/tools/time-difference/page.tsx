@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/time-difference",
   },
   openGraph: {
+    title: "Time Difference Calculator | Date Duration Tool",
+    description:
+      "Calculate the exact difference between two dates and times in years, months, days, hours, minutes, and seconds.",
     url: "/tools/time-difference",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Time Difference Calculator Tool",
+      },
+    ],
   },
 };
 

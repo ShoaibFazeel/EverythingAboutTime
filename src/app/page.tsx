@@ -18,7 +18,20 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    title: "Time Tools Suite for Productivity",
+    description:
+      "Use free online time tools including Pomodoro timer, sleep calculator, world clocks, countdown timer, Unix converter, and more.",
     url: "/",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Everything About Time Tools",
+      },
+    ],
   },
 };
 

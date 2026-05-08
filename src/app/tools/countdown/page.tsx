@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/countdown",
   },
   openGraph: {
+    title: "Countdown Timer | Online Event Countdown",
+    description:
+      "Create a live countdown to any future date and time. Perfect for exams, launches, events, deadlines, and special occasions.",
     url: "/tools/countdown",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Countdown Timer Tool",
+      },
+    ],
   },
 };
 

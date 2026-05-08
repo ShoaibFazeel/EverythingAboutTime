@@ -15,7 +15,20 @@ export const metadata = {
     canonical: "/tools/sleep-calculator",
   },
   openGraph: {
+    title: "Sleep Calculator | Wake Up Refreshed",
+    description:
+      "Calculate the perfect time to go to bed or wake up based on 90-minute sleep cycles. Avoid morning grogginess and improve sleep quality.",
     url: "/tools/sleep-calculator",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Sleep Calculator Tool",
+      },
+    ],
   },
 };
 

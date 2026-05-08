@@ -9,7 +9,19 @@ export const metadata = {
     canonical: "/blog",
   },
   openGraph: {
+    title: "Blog | Everything About Time",
+    description: "Read our latest articles on sleep, productivity, and managing your time effectively.",
     url: "/blog",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Everything About Time Blog",
+      },
+    ],
   },
 };
 

@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/age-calculator",
   },
   openGraph: {
+    title: "Age Calculator | Exact Age in Years, Months, Days",
+    description:
+      "Calculate exact age from date of birth and see years, months, and days instantly. Also check time remaining until your next birthday.",
     url: "/tools/age-calculator",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Age Calculator Tool",
+      },
+    ],
   },
 };
 

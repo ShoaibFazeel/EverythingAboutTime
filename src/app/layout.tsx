@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Everything About Time",
     title: "Everything About Time",
+    url: "/",
     description:
       "Advanced productivity tools for developers and creators. Unix timestamp converter, time difference, age calculator, and more.",
     images: [

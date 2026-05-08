@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/pomodoro",
   },
   openGraph: {
+    title: "Pomodoro Timer | Focus & Study Tool",
+    description:
+      "Boost your productivity with our free online Pomodoro timer. Perfect for students and professionals using the 25-minute focus technique.",
     url: "/tools/pomodoro",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "Pomodoro Timer Tool",
+      },
+    ],
   },
 };
 

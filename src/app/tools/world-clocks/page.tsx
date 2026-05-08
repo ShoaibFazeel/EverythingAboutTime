@@ -14,7 +14,20 @@ export const metadata = {
     canonical: "/tools/world-clocks",
   },
   openGraph: {
+    title: "World Clocks | Compare Time Zones Instantly",
+    description:
+      "Compare multiple world time zones in one view. Track current times across cities and plan meetings across regions easily.",
     url: "/tools/world-clocks",
+    siteName: "Everything About Time",
+    type: "website",
+    images: [
+      {
+        url: "/timing.png",
+        width: 1200,
+        height: 630,
+        alt: "World Clocks Tool",
+      },
+    ],
   },
 };
 

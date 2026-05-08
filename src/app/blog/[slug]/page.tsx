@@ -14,14 +14,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) {
     return { title: 'Post Not Found' };
   }
+  const title = post.seoTitle || `${post.title} | Everything About Time`;
+  const description = post.seoDescription || post.excerpt;
+
   return {
-    title: post.seoTitle || `${post.title} | Time is Everything`,
-    description: post.seoDescription || post.excerpt,
+    title,
+    description,
     alternates: {
       canonical: `/blog/${resolvedParams.slug}`,
     },
     openGraph: {
+      title,
+      description,
       url: `/blog/${resolvedParams.slug}`,
+      siteName: "Everything About Time",
+      type: "article",
+      publishedTime: post.publishedAt,
+      images: [
+        {
+          url: "/timing.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
   };
 }
@@ -39,7 +55,7 @@ export default async function BlogPostPage({ params }: Props) {
       <Link href="/blog" className="inline-flex items-center text-primary hover:underline mb-8 gap-2 font-medium">
         <ArrowLeft className="w-4 h-4" /> Back to Blog
       </Link>
-      
+
       <article className="glass rounded-3xl p-6 md:p-12 shadow-sm">
         <header className="mb-10 text-center">
           <div className="flex items-center justify-center gap-3 mb-6 text-sm font-medium">
@@ -51,7 +67,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{post.title}</h1>
         </header>
-        
+
         <div className="prose prose-lg dark:prose-invert max-w-none text-foreground/80">
           {post.content.split('\n').map((paragraph, idx) => (
             <p key={idx} className="mb-6 leading-relaxed">{paragraph}</p>
