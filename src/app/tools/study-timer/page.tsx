@@ -2,22 +2,22 @@ import StudyTimer from "@/components/tools/StudyTimer";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Study Timer | Session Stopwatch for Students",
+  title: "Minimal Study Timer for Deep Work",
   description:
-    "Track deep work and study sessions with a simple online stopwatch. Save focused sessions and stay consistent with your learning goals.",
+    "Improve your academic focus with our free online study timer. Track your learning sessions and maximize efficiency with a minimal, clutter-free stopwatch.",
   keywords: [
     "study timer",
-    "study stopwatch",
-    "session tracker",
-    "focus timer",
+    "deep work tool",
+    "learning stopwatch",
+    "student productivity",
   ],
   alternates: {
     canonical: "/tools/study-timer",
   },
   openGraph: {
-    title: "Study Timer | Session Stopwatch for Students",
+    title: "Minimal Study Timer for Deep Work",
     description:
-      "Track deep work and study sessions with a simple online stopwatch. Save focused sessions and stay consistent with your learning goals.",
+      "Improve your academic focus with our free online study timer. Track your learning sessions and maximize efficiency with a minimal, clutter-free stopwatch.",
     url: "/tools/study-timer",
     siteName: "Everything About Time",
     type: "website",

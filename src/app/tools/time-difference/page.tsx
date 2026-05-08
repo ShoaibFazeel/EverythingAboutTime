@@ -2,20 +2,20 @@ import TimeDifference from "@/components/tools/TimeDifference";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Time Difference Calculator | Date Duration Tool",
-  description: "Calculate the exact time difference between two dates in years, months, days, hours, and minutes. Our tool provides a detailed duration breakdown instantly.",
+  title: "Time Difference & Duration Calculator",
+  description: "Calculate the exact duration between two dates and times. Get results in years, months, days, and seconds with our free online duration tool.",
   keywords: [
-    "time difference calculator",
-    "date difference",
+    "time difference",
     "duration calculator",
-    "time interval",
+    "time between dates",
+    "date difference tool",
   ],
   alternates: {
     canonical: "/tools/time-difference",
   },
   openGraph: {
-    title: "Time Difference Calculator | Date Duration Tool",
-    description: "Calculate the exact time difference between two dates in years, months, days, hours, and minutes. Our tool provides a detailed duration breakdown instantly.",
+    title: "Time Difference & Duration Calculator",
+    description: "Calculate the exact duration between two dates and times. Get results in years, months, days, and seconds with our free online duration tool.",
     url: "/tools/time-difference",
     siteName: "Everything About Time",
     type: "website",

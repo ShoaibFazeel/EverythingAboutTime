@@ -2,20 +2,20 @@ import WorldClocks from "@/components/tools/WorldClocks";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "World Clocks | Compare Time Zones Instantly",
-  description: "Compare multiple world time zones in one view. Track current times across global cities and plan international meetings across different regions with ease.",
+  title: "World Clocks & Time Zone Converter",
+  description: "Track the current time in multiple cities simultaneously. A free online world clock tool with interactive time zone conversion and synchronization.",
   keywords: [
-    "world clock",
-    "time zones",
-    "global clock",
-    "timezone converter",
+    "world clocks",
+    "time zone converter",
+    "global time",
+    "compare time zones",
   ],
   alternates: {
     canonical: "/tools/world-clocks",
   },
   openGraph: {
-    title: "World Clocks | Compare Time Zones Instantly",
-    description: "Compare multiple world time zones in one view. Track current times across global cities and plan international meetings across different regions with ease.",
+    title: "World Clocks & Time Zone Converter",
+    description: "Track the current time in multiple cities simultaneously. A free online world clock tool with interactive time zone conversion and synchronization.",
     url: "/tools/world-clocks",
     siteName: "Everything About Time",
     type: "website",

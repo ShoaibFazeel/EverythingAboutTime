@@ -2,7 +2,7 @@ import AddSubtractTime from "@/components/tools/AddSubtractTime";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Add or Subtract Time | Date Time Calculator",
+  title: "Add or Subtract Time & Date Calculator",
   description: "Easily add or subtract years, months, days, hours, and minutes from any date. A precise time math calculator for planning and duration adjustments.",
   keywords: [
     "add subtract time",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "/tools/add-subtract-time",
   },
   openGraph: {
-    title: "Add or Subtract Time | Date Time Calculator",
+    title: "Add or Subtract Time & Date Calculator",
     description: "Easily add or subtract years, months, days, hours, and minutes from any date. A precise time math calculator for planning and duration adjustments.",
     url: "/tools/add-subtract-time",
     siteName: "Everything About Time",

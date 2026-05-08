@@ -2,7 +2,7 @@ import UnixTime from "@/components/tools/UnixTime";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Unix Timestamp Converter | Epoch Time Tool",
+  title: "Unix Timestamp Converter & Epoch Tool",
   description: "Get the current live Unix timestamp and easily convert between epoch time and human-readable dates. Fast, accurate, and free online Unix time converter tool.",
   keywords: [
     "unix timestamp",
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "/tools/unix-time",
   },
   openGraph: {
-    title: "Unix Timestamp Converter | Epoch Time Tool",
+    title: "Unix Timestamp Converter & Epoch Tool",
     description: "Get the current live Unix timestamp and easily convert between epoch time and human-readable dates. Fast, accurate, and free online Unix time converter tool.",
     url: "/tools/unix-time",
     siteName: "Everything About Time",

@@ -2,22 +2,22 @@ import CountdownTimer from "@/components/tools/CountdownTimer";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Countdown Timer | Online Event Countdown",
+  title: "Online Countdown Timer & Event Tracker",
   description:
-    "Create a live countdown to any future date and time. Perfect for exams, launches, events, deadlines, and special occasions.",
+    "Create a live-updating countdown for any event or deadline. A free, precise online timer to track the days, hours, and minutes until your big moment.",
   keywords: [
     "countdown timer",
-    "event countdown",
-    "deadline timer",
     "online countdown",
+    "event tracker",
+    "timer tool",
   ],
   alternates: {
     canonical: "/tools/countdown",
   },
   openGraph: {
-    title: "Countdown Timer | Online Event Countdown",
+    title: "Online Countdown Timer & Event Tracker",
     description:
-      "Create a live countdown to any future date and time. Perfect for exams, launches, events, deadlines, and special occasions.",
+      "Create a live-updating countdown for any event or deadline. A free, precise online timer to track the days, hours, and minutes until your big moment.",
     url: "/tools/countdown",
     siteName: "Everything About Time",
     type: "website",

@@ -37,7 +37,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Everything About Time",
-    title: "Everything About Time",
+    title: {
+      default: "Everything About Time",
+      template: "%s | Everything About Time",
+    },
     url: "/",
     description:
       "Advanced productivity tools for developers and creators. Unix timestamp converter, time difference, age calculator, and more.",
@@ -52,7 +55,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Everything About Time",
+    title: {
+      default: "Everything About Time",
+      template: "%s | Everything About Time",
+    },
     description:
       "Advanced productivity tools for developers and creators. Unix timestamp converter, time difference, age calculator, and more.",
     images: ["/timing.png"],

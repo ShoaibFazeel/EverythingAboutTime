@@ -3,7 +3,7 @@ import FaqSchema from "@/components/SEO/FaqSchema";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Sleep Calculator | Wake Up Refreshed",
+  title: "Sleep Cycle Calculator & Bedtime Planner",
   description:
     "Calculate the perfect time to go to bed or wake up based on 90-minute sleep cycles. Avoid morning grogginess and improve sleep quality.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata = {
     canonical: "/tools/sleep-calculator",
   },
   openGraph: {
-    title: "Sleep Calculator | Wake Up Refreshed",
+    title: "Sleep Cycle Calculator & Bedtime Planner",
     description:
       "Calculate the perfect time to go to bed or wake up based on 90-minute sleep cycles. Avoid morning grogginess and improve sleep quality.",
     url: "/tools/sleep-calculator",

@@ -2,9 +2,9 @@ import PomodoroTimer from "@/components/tools/PomodoroTimer";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Pomodoro Timer | Focus & Study Tool",
+  title: "Pomodoro Focus Timer for Productivity",
   description:
-    "Boost your productivity with our free online Pomodoro timer. Perfect for students and professionals using the 25-minute focus technique.",
+    "Boost your focus with our free online Pomodoro timer. Use the 25/5 rule to manage your work and breaks for maximum productivity.",
   keywords: [
     "pomodoro timer",
     "study timer",
@@ -15,9 +15,9 @@ export const metadata = {
     canonical: "/tools/pomodoro",
   },
   openGraph: {
-    title: "Pomodoro Timer | Focus & Study Tool",
+    title: "Pomodoro Focus Timer for Productivity",
     description:
-      "Boost your productivity with our free online Pomodoro timer. Perfect for students and professionals using the 25-minute focus technique.",
+      "Boost your focus with our free online Pomodoro timer. Use the 25/5 rule to manage your work and breaks for maximum productivity.",
     url: "/tools/pomodoro",
     siteName: "Everything About Time",
     type: "website",

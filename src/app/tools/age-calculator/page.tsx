@@ -2,22 +2,22 @@ import AgeCalculator from "@/components/tools/AgeCalculator";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
-  title: "Age Calculator | Exact Age in Years, Months, Days",
+  title: "Age Calculator: Years, Months & Days",
   description:
-    "Calculate exact age from date of birth and see years, months, and days instantly. Also check time remaining until your next birthday.",
+    "Discover exactly how long you've been alive in years, months, and days. A free, precise age calculation tool for milestones and records.",
   keywords: [
     "age calculator",
     "calculate age",
-    "birthday calculator",
-    "dob age tool",
+    "exact age tool",
+    "how old am i",
   ],
   alternates: {
     canonical: "/tools/age-calculator",
   },
   openGraph: {
-    title: "Age Calculator | Exact Age in Years, Months, Days",
+    title: "Age Calculator: Years, Months & Days",
     description:
-      "Calculate exact age from date of birth and see years, months, and days instantly. Also check time remaining until your next birthday.",
+      "Discover exactly how long you've been alive in years, months, and days. A free, precise age calculation tool for milestones and records.",
     url: "/tools/age-calculator",
     siteName: "Everything About Time",
     type: "website",

@@ -3,13 +3,13 @@ import Link from "next/link";
 import { Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Blog | Everything About Time",
+  title: "Time Productivity & Sleep Science Blog",
   description: "Explore our collection of articles on sleep science, productivity hacks, and time management strategies to help you master your daily schedule effectively.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Blog | Everything About Time",
+    title: "Time Productivity & Sleep Science Blog",
     description: "Explore our collection of articles on sleep science, productivity hacks, and time management strategies to help you master your daily schedule effectively.",
     url: "/blog",
     siteName: "Everything About Time",
