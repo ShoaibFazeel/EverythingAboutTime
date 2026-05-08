@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -78,25 +79,31 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         {/* Google Analytics Consent & Loader */}
-        <script src="/consent.js"></script>
+        <Script src="/consent.js" strategy="beforeInteractive" />
+        
         {/* Google tag (gtag.js) */}
-        <script
-          async
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Q120BKTZF7"
+          strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-Q120BKTZF7');`,
-          }}
-        />
+            gtag('config', 'G-Q120BKTZF7');
+          `}
+        </Script>
 
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="pHgU/tUEXvwtMUzyAMYkBg" async></script>
+        <Script 
+          src="https://analytics.ahrefs.com/analytics.js" 
+          data-key="pHgU/tUEXvwtMUzyAMYkBg" 
+          strategy="lazyOnload" 
+        />
       </head>
       <body
         className="min-h-full flex flex-col font-sans"

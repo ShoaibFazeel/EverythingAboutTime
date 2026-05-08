@@ -1,4 +1,5 @@
 import AddSubtractTime from "@/components/tools/AddSubtractTime";
+import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
   title: "Add or Subtract Time | Date Time Calculator",
@@ -37,6 +38,40 @@ export default function Page() {
         <p className="text-lg text-foreground/70 max-w-2xl">Use this calculator to easily find out what date and time it will be if you add or subtract an exact duration.</p>
       </div>
       <AddSubtractTime />
+
+      <ToolInfoTabs
+        description={
+          <section>
+            <h2 className="text-3xl font-bold mb-6">Simplify Your Time Calculations</h2>
+            <div className="prose prose-lg dark:prose-invert text-foreground/70">
+              <p>
+                Calculating future or past dates by adding or subtracting specific durations can be surprisingly tricky. Between varying month lengths and the extra day in leap years, it is easy to make a mistake when doing the math in your head. Our <strong>Add or Subtract Time</strong> tool takes the guesswork out of the process.
+              </p>
+              <p>
+                By providing a simple interface to input years, months, days, hours, and minutes, we allow you to instantly determine the exact resulting date and time. This tool uses standard calendar logic to ensure that every calculation is accurate down to the minute.
+              </p>
+            </div>
+          </section>
+        }
+        howToUse={
+          <section>
+            <h2 className="text-3xl font-bold mb-6">When to Use Time Addition & Subtraction</h2>
+            <div className="prose prose-lg dark:prose-invert text-foreground/70">
+              <p>
+                This calculator is a versatile utility for many different types of planning and analysis:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Project Deadlines:</strong> Determine exactly when a project phase will end if it takes 45 days and 6 hours from a specific start date.</li>
+                <li><strong>Event Planning:</strong> Find out the exact date of an event that occurs "18 months from now" or track back to see what the date was 100 days ago.</li>
+                <li><strong>Legal & Financial:</strong> Calculate the exact expiration date of a contract or the maturity date of an investment with a specific term.</li>
+              </ul>
+              <p>
+                Simply enter your starting date and the duration you wish to add or subtract, and our tool will provide the precise result immediately.
+              </p>
+            </div>
+          </section>
+        }
+      />
     </div>
   );
 }

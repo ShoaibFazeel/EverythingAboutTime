@@ -1,71 +1,58 @@
 import Link from "next/link";
-import { Calculator, Clock, Moon, Timer, Activity, Globe, Code } from "lucide-react";
-import type { Metadata } from "next";
+import { 
+  Clock, 
+  Calendar, 
+  Timer, 
+  Languages, 
+  Calculator, 
+  Moon, 
+  Focus, 
+  Hash,
+  Plus
+} from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Time Tools Suite for Productivity",
-  description:
-    "Use free online time tools including Pomodoro timer, sleep calculator, world clocks, countdown timer, Unix converter, and more.",
-  keywords: [
-    "time tools",
-    "productivity tools",
-    "pomodoro timer",
-    "sleep calculator",
-    "unix timestamp converter",
-    "world clock",
-  ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Time Tools Suite for Productivity",
-    description:
-      "Use free online time tools including Pomodoro timer, sleep calculator, world clocks, countdown timer, Unix converter, and more.",
-    url: "/",
-    siteName: "Everything About Time",
-    type: "website",
-    images: [
-      {
-        url: "/timing.png",
-        width: 1200,
-        height: 630,
-        alt: "Everything About Time Tools",
-      },
-    ],
-  },
+export const metadata = {
+  title: "Everything About Time | Free Productivity & Time Tools",
+  description: "A comprehensive suite of free, fast, and minimal time-management tools including Unix converters, world clocks, pomodoro timers, and sleep calculators.",
 };
 
-export default function HomePage() {
-  const categories = [
-    {
-      title: "Time Calculations",
-      description: "Quickly determine differences and durations.",
-      tools: [
-        { name: "Time Difference", path: "/tools/time-difference", icon: <Calculator className="w-5 h-5" /> },
-        { name: "Add/Subtract Time", path: "/tools/add-subtract-time", icon: <Clock className="w-5 h-5" /> },
-        { name: "Countdown Timer", path: "/tools/countdown", icon: <Timer className="w-5 h-5" /> },
-        { name: "Unix Timestamp", path: "/tools/unix-time", icon: <Code className="w-5 h-5" /> },
-      ]
-    },
-    {
-      title: "Personal Time Tools",
-      description: "Manage your life schedules effectively.",
-      tools: [
-        { name: "Age Calculator", path: "/tools/age-calculator", icon: <Activity className="w-5 h-5" /> },
-        { name: "Sleep Calculator", path: "/tools/sleep-calculator", icon: <Moon className="w-5 h-5" /> },
-      ]
-    },
-    {
-      title: "Productivity & World",
-      description: "Stay focused globally and locally.",
-      tools: [
-        { name: "World Clocks", path: "/tools/world-clocks", icon: <Globe className="w-5 h-5" /> },
-        { name: "Study Timer", path: "/tools/study-timer", icon: <Timer className="w-5 h-5" /> },
-        { name: "Pomodoro Timer", path: "/tools/pomodoro", icon: <Clock className="w-5 h-5" /> },
-      ]
-    }
-  ];
+const categories = [
+  {
+    title: "Developers & Technical",
+    description: "Essential tools for timestamp conversion and technical time tracking.",
+    tools: [
+      { name: "Unix Timestamp", path: "/tools/unix-time", icon: <Hash className="w-6 h-6" /> },
+    ]
+  },
+  {
+    title: "Calculators",
+    description: "Precise calculations for age, duration, and date math.",
+    tools: [
+      { name: "Age Calculator", path: "/tools/age-calculator", icon: <Calculator className="w-6 h-6" /> },
+      { name: "Time Difference", path: "/tools/time-difference", icon: <Timer className="w-6 h-6" /> },
+      { name: "Add/Subtract Time", path: "/tools/add-subtract-time", icon: <Plus className="w-6 h-6" /> },
+    ]
+  },
+  {
+    title: "Productivity",
+    description: "Tools designed to help you focus and manage your daily routines.",
+    tools: [
+      { name: "Pomodoro Timer", path: "/tools/pomodoro", icon: <Focus className="w-6 h-6" /> },
+      { name: "Study Timer", path: "/tools/study-timer", icon: <Timer className="w-6 h-6" /> },
+      { name: "Sleep Calculator", path: "/tools/sleep-calculator", icon: <Moon className="w-6 h-6" /> },
+    ]
+  },
+  {
+    title: "Clocks & Planning",
+    description: "Stay in sync with the world and keep track of upcoming events.",
+    tools: [
+      { name: "World Clocks", path: "/tools/world-clocks", icon: <Languages className="w-6 h-6" /> },
+      { name: "Countdown", path: "/tools/countdown", icon: <Clock className="w-6 h-6" /> },
+    ]
+  }
+];
 
+export default function Home() {
   return (
     <div className="container mx-auto px-4 max-w-6xl">
       <div className="text-center mb-16">
@@ -98,6 +85,23 @@ export default function HomePage() {
             </div>
           </section>
         ))}
+        
+        <div className="mt-24 max-w-4xl mx-auto space-y-12 border-t border-primary/10 pt-20 pb-12">
+          <section className="text-center">
+            <h2 className="text-4xl font-bold mb-8">Why Choose Everything About Time?</h2>
+            <div className="prose prose-lg dark:prose-invert text-foreground/70 mx-auto">
+              <p>
+                In a digital world overflowing with complex software, we believe in the power of <strong>simplicity</strong>. Our mission is to provide a comprehensive suite of time-management utilities that are fast, accessible, and entirely free to use. No accounts, no subscriptions, and no unnecessary clutter.
+              </p>
+              <p>
+                From technical tools like our <strong>Unix Timestamp Converter</strong> to personal productivity aids like the <strong>Pomodoro Timer</strong> and <strong>Sleep Calculator</strong>, every tool is built with a focus on accuracy and user experience. We use modern web technologies to ensure that our tools load instantly and work seamlessly on any device.
+              </p>
+              <p>
+                Whether you are a developer looking for a quick epoch conversion, a student optimizing your study sessions, or a professional coordinating across time zones, <strong>Everything About Time</strong> is your reliable companion for mastering every second of your day.
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

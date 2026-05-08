@@ -1,4 +1,5 @@
 import PomodoroTimer from "@/components/tools/PomodoroTimer";
+import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
 
 export const metadata = {
   title: "Pomodoro Timer | Focus & Study Tool",
@@ -39,6 +40,40 @@ export default function Page() {
         <p className="text-lg text-foreground/70 max-w-2xl mx-auto">Boost your productivity using the famous 25-minute focus intervals and scheduled breaks.</p>
       </div>
       <PomodoroTimer />
+
+      <ToolInfoTabs
+        description={
+          <section>
+            <h2 className="text-3xl font-bold mb-6">What is the Pomodoro Technique?</h2>
+            <div className="prose prose-lg dark:prose-invert text-foreground/70">
+              <p>
+                The <strong>Pomodoro Technique</strong> is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a <em>pomodoro</em>, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student.
+              </p>
+              <p>
+                The technique is based on the idea that frequent breaks can improve mental agility and focus. By working in short, focused bursts, you reduce the impact of internal and external interruptions and maintain a high level of productivity throughout the day.
+              </p>
+            </div>
+          </section>
+        }
+        howToUse={
+          <section>
+            <h2 className="text-3xl font-bold mb-6">How to Use the Pomodoro Timer</h2>
+            <div className="prose prose-lg dark:prose-invert text-foreground/70">
+              <p>
+                Our free online Pomodoro timer is pre-configured to follow the standard 25/5 rule, but it is flexible enough for any workflow:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>The Focus Session:</strong> Start the timer and work on a single task with zero distractions for 25 minutes.</li>
+                <li><strong>The Short Break:</strong> When the timer rings, take a 5-minute break. Step away from your desk, stretch, or grab a glass of water.</li>
+                <li><strong>The Long Break:</strong> After completing four focus sessions, take a longer break of 15-30 minutes to fully recharge.</li>
+              </ul>
+              <p>
+                By using this structured approach, you can avoid burnout and ensure that your brain stays fresh and capable of deep work for longer periods.
+              </p>
+            </div>
+          </section>
+        }
+      />
     </div>
   );
 }
