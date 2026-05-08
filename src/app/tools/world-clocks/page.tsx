@@ -2,8 +2,7 @@ import WorldClocks from "@/components/tools/WorldClocks";
 
 export const metadata = {
   title: "World Clocks | Compare Time Zones Instantly",
-  description:
-    "Compare multiple world time zones in one view. Track current times across cities and plan meetings across regions easily.",
+  description: "Compare multiple world time zones in one view. Track current times across global cities and plan international meetings across different regions with ease.",
   keywords: [
     "world clock",
     "time zones",
@@ -15,8 +14,7 @@ export const metadata = {
   },
   openGraph: {
     title: "World Clocks | Compare Time Zones Instantly",
-    description:
-      "Compare multiple world time zones in one view. Track current times across cities and plan meetings across regions easily.",
+    description: "Compare multiple world time zones in one view. Track current times across global cities and plan international meetings across different regions with ease.",
     url: "/tools/world-clocks",
     siteName: "Everything About Time",
     type: "website",
