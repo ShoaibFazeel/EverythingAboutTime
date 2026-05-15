@@ -106,7 +106,7 @@ export default function TimePicker({ value, onChange, label, accentColor = "prim
         </button>
 
         {open && (
-            <div className="absolute top-[calc(100%+8px)] left-0 right-0 z-50 p-4 bg-card border border-foreground/10 rounded-3xl flex flex-col gap-4 animate-in slide-in-from-top-2 duration-300 shadow-2xl shadow-primary/5">
+            <div className="absolute top-[calc(100%+8px)] left-0 right-0 z-40 p-4 bg-card border border-foreground/10 rounded-3xl flex flex-col gap-4 animate-in slide-in-from-top-2 duration-300 shadow-2xl shadow-primary/5">
                 <div className="flex justify-end">
                     <button 
                         onClick={handleNow}
