@@ -29,6 +29,7 @@ export default function Header() {
               src="/timing.png"
               alt="EverythingAboutTime-logo"
               fill
+              sizes="(max-width: 640px) 28px, 32px"
               className="rounded-sm object-contain"
               priority
             />

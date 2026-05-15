@@ -1,5 +1,6 @@
 import UnixTime from "@/components/tools/UnixTime";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
+import Script from "next/script";
 
 export const metadata = {
   title: "Unix Timestamp Converter & Epoch Tool",
@@ -31,9 +32,31 @@ export const metadata = {
 };
 
 export default function Page() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Unix Timestamp Converter & Epoch Tool",
+    "operatingSystem": "All",
+    "applicationCategory": "DeveloperApplication",
+    "description": metadata.description,
+    "url": `${siteUrl}/tools/unix-time`,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
-      <div className="mb-12 text-center">
+    <>
+      <Script
+        id="schema-unix-time"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="w-full max-w-6xl mx-auto px-4">
+        <div className="mb-12 text-center">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Unix Timestamp</h1>
         <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
           View the live Unix epoch time, convert timestamps to human-readable dates, and back again instantly.
@@ -74,5 +97,6 @@ export default function Page() {
         }
       />
     </div>
+    </>
   );
 }

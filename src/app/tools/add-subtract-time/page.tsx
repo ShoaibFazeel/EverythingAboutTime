@@ -1,5 +1,6 @@
 import AddSubtractTime from "@/components/tools/AddSubtractTime";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
+import Script from "next/script";
 
 export const metadata = {
   title: "Add or Subtract Time & Date Calculator",
@@ -31,9 +32,31 @@ export const metadata = {
 };
 
 export default function Page() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Add or Subtract Time & Date Calculator",
+    "operatingSystem": "All",
+    "applicationCategory": "UtilitiesApplication",
+    "description": metadata.description,
+    "url": `${siteUrl}/tools/add-subtract-time`,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
-      <div className="mb-12 text-center sm:text-left">
+    <>
+      <Script
+        id="schema-add-subtract"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="w-full max-w-6xl mx-auto px-4">
+        <div className="mb-12 text-center sm:text-left">
         <h1 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4">Add or Subtract Time</h1>
         <p className="text-lg text-foreground/70 max-w-2xl mx-auto sm:mx-0">Use this calculator to easily find out what date and time it will be if you add or subtract an exact duration.</p>
       </div>
@@ -73,5 +96,6 @@ export default function Page() {
         }
       />
     </div>
+    </>
   );
 }

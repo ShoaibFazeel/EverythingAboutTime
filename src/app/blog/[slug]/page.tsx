@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock } from "lucide-react";
 import type { Metadata } from 'next';
+import Script from "next/script";
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -50,8 +51,31 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "image": [
+      `${siteUrl}/timing.png`
+    ],
+    "datePublished": post.publishedAt,
+    "dateModified": post.publishedAt,
+    "author": [{
+        "@type": "Organization",
+        "name": "Everything About Time",
+        "url": siteUrl
+    }]
+  };
+
   return (
-    <div className="container mx-auto px-4 max-w-3xl">
+    <>
+      <Script
+        id={`schema-article-${post.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4 max-w-3xl">
       <Link href="/blog" className="inline-flex items-center text-primary hover:underline mb-8 gap-2 font-medium">
         <ArrowLeft className="w-4 h-4" /> Back to Blog
       </Link>
@@ -74,6 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       </article>
     </div>
+    </>
   );
 }
 

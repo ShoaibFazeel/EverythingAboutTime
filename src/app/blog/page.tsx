@@ -1,5 +1,6 @@
 import { getPosts } from "@/services/sanityMock";
 import Link from "next/link";
+import Script from "next/script";
 import { Clock } from "lucide-react";
 
 export const metadata = {
@@ -28,9 +29,30 @@ export const metadata = {
 export default async function BlogPage() {
   const posts = await getPosts();
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": metadata.title,
+    "description": metadata.description,
+    "url": `${siteUrl}/blog`,
+    "blogPost": posts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "url": `${siteUrl}/blog/${post.slug}`,
+      "datePublished": post.publishedAt
+    }))
+  };
+
   return (
-    <div className="container mx-auto px-4 max-w-4xl">
-      <div className="mb-12 text-center md:text-left">
+    <>
+      <Script
+        id="schema-blog"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="mb-12 text-center md:text-left">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Blog</h1>
         <p className="text-lg text-foreground/70 max-w-2xl">
           Insights on time management, productivity, and the science of sleep.
@@ -62,5 +84,6 @@ export default async function BlogPage() {
         ))}
       </div>
     </div>
+    </>
   );
 }
