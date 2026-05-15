@@ -1,5 +1,6 @@
 import StudyTimer from "@/components/tools/StudyTimer";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
+import Script from "next/script";
 
 export const metadata = {
   title: "Minimal Study Timer for Deep Work",
@@ -33,9 +34,31 @@ export const metadata = {
 };
 
 export default function Page() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Minimal Study Timer for Deep Work",
+    "operatingSystem": "All",
+    "applicationCategory": "UtilitiesApplication",
+    "description": metadata.description,
+    "url": `${siteUrl}/tools/study-timer`,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 max-w-6xl">
-      <div className="mb-10 text-center md:text-left">
+    <>
+      <Script
+        id="schema-study-timer"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="w-full max-w-6xl mx-auto px-4">
+        <div className="mb-10 text-center md:text-left">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Study Timer</h1>
         <p className="text-lg text-foreground/70 max-w-2xl">Use this minimal stopwatch to track deep work sessions and save them internally.</p>
       </div>
@@ -75,5 +98,6 @@ export default function Page() {
         }
       />
     </div>
+    </>
   );
 }

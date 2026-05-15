@@ -1,5 +1,6 @@
 import AgeCalculator from "@/components/tools/AgeCalculator";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
+import Script from "next/script";
 
 export const metadata = {
   title: "Age Calculator: Years, Months & Days",
@@ -33,10 +34,32 @@ export const metadata = {
 };
 
 export default function Page() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator: Years, Months & Days",
+    "operatingSystem": "All",
+    "applicationCategory": "UtilitiesApplication",
+    "description": metadata.description,
+    "url": `${siteUrl}/tools/age-calculator`,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 max-w-6xl">
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Age Calculator</h1>
+    <>
+      <Script
+        id="schema-age-calculator"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="w-full max-w-6xl mx-auto px-4">
+        <div className="mb-12 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Age Calculator</h1>
         <p className="text-lg text-foreground/70 max-w-2xl mx-auto">Discover exactly how long you've been alive in years, months, and days.</p>
       </div>
       <AgeCalculator />
@@ -75,5 +98,6 @@ export default function Page() {
         }
       />
     </div>
+    </>
   );
 }

@@ -76,6 +76,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -116,7 +121,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Header />
-        <main className="flex-1 flex flex-col pt-8 pb-16">
+        <main className="flex-1 flex flex-col pt-8 pb-16 w-full">
           {children}
         </main>
         <Footer />

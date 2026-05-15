@@ -1,5 +1,6 @@
 import WorldClocks from "@/components/tools/WorldClocks";
 import ToolInfoTabs from "@/components/tools/ToolInfoTabs";
+import Script from "next/script";
 
 export const metadata = {
   title: "World Clocks & Time Zone Converter",
@@ -31,9 +32,31 @@ export const metadata = {
 };
 
 export default function Page() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "World Clocks & Time Zone Converter",
+    "operatingSystem": "All",
+    "applicationCategory": "UtilitiesApplication",
+    "description": metadata.description,
+    "url": `${siteUrl}/tools/world-clocks`,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 max-w-5xl">
-      <div className="mb-8">
+    <>
+      <Script
+        id="schema-world-clocks"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="w-full max-w-5xl mx-auto px-4">
+        <div className="mb-8">
         <h1 className="text-4xl font-bold tracking-tight mb-2">World Clocks</h1>
         <p className="text-lg text-foreground/70">Observe multiple time zones and adjust one to instantly see the relative time everywhere else.</p>
       </div>
@@ -73,5 +96,6 @@ export default function Page() {
         }
       />
     </div>
+    </>
   );
 }

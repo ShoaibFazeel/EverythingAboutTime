@@ -47,9 +47,9 @@ export default function AddSubtractTime() {
   ] as const;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_400px]">
+    <div className="w-full mx-auto grid justify-items-center gap-6 sm:gap-8 lg:grid-cols-[1fr_400px]">
       
-      <div className="glass rounded-3xl p-8 flex flex-col gap-8">
+      <div className="glass rounded-3xl p-6 sm:p-8 flex flex-col gap-8 w-full">
         <div>
           <DateTimePicker
             value={baseDateStr}
@@ -58,16 +58,16 @@ export default function AddSubtractTime() {
           />
         </div>
 
-        <div className="flex bg-foreground/5 p-1 rounded-2xl w-fit">
+        <div className="grid grid-cols-1 sm:grid-cols-2 bg-foreground/5 p-1 rounded-2xl w-full sm:w-fit mx-auto sm:mx-0 gap-1">
           <button 
             onClick={() => setOperation("add")}
-            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${operation === 'add' ? 'bg-primary text-white shadow-md' : 'hover:bg-foreground/10'}`}
+            className={`flex items-center justify-center gap-2 px-2 sm:px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${operation === 'add' ? 'bg-primary text-white shadow-md' : 'hover:bg-foreground/10'}`}
           >
             <Plus className="w-4 h-4"/> Add Time
           </button>
           <button 
             onClick={() => setOperation("subtract")}
-            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${operation === 'subtract' ? 'bg-red-500 text-white shadow-md' : 'hover:bg-foreground/10'}`}
+            className={`flex items-center justify-center gap-2 px-2 sm:px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${operation === 'subtract' ? 'bg-red-500 text-white shadow-md' : 'hover:bg-foreground/10'}`}
           >
             <Minus className="w-4 h-4"/> Subtract Time
           </button>
@@ -75,7 +75,7 @@ export default function AddSubtractTime() {
 
         <div>
           <h3 className="text-sm font-semibold text-foreground/70 mb-4 uppercase tracking-wider">Adjustment Amounts</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-5 gap-2 sm:gap-4">
             {inputs.map(({ label, key }) => (
               <div key={key}>
                 <label className="block tracking-tight text-xs font-semibold text-foreground/50 mb-1 pl-1">{label}</label>
@@ -84,7 +84,7 @@ export default function AddSubtractTime() {
                   min="0"
                   value={values[key]}
                   onChange={(e) => updateValue(key, e.target.value)}
-                  className="w-full bg-foreground/5 border border-foreground/10 rounded-xl px-4 py-3 outline-none focus:border-primary/50 transition-colors font-bold text-center text-xl"
+                  className="w-full bg-foreground/5 border border-foreground/10 rounded-xl px-2 sm:px-4 py-3 outline-none focus:border-primary/50 transition-colors font-bold text-center text-lg sm:text-xl"
                 />
               </div>
             ))}
@@ -92,7 +92,7 @@ export default function AddSubtractTime() {
         </div>
       </div>
 
-      <div className="glass rounded-3xl p-8 flex flex-col justify-center items-center text-center">
+      <div className="glass rounded-3xl p-6 sm:p-8 flex flex-col justify-center items-center text-center w-full">
         {!isValid ? (
           <div className="text-foreground/50">Please enter a valid base date.</div>
         ) : (
@@ -101,13 +101,13 @@ export default function AddSubtractTime() {
               <CalendarDays className="w-8 h-8"/>
             </div>
             <h3 className="text-sm font-semibold text-foreground/50 mb-3 uppercase tracking-widest">Resulting Date</h3>
-            <div className="text-4xl font-extrabold text-primary mb-2 leading-tight">
+            <div className="text-2xl min-[400px]:text-3xl sm:text-4xl font-extrabold text-primary mb-2 leading-tight">
               {format(resultDate, "h:mm a")}
             </div>
-            <div className="text-2xl font-bold text-foreground/80">
+            <div className="text-lg sm:text-2xl font-bold text-foreground/80">
               {format(resultDate, "EEEE")}
             </div>
-            <div className="text-xl font-medium text-foreground/60">
+            <div className="text-base sm:text-xl font-medium text-foreground/60">
               {format(resultDate, "MMMM do, yyyy")}
             </div>
           </>
