@@ -68,11 +68,10 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">{post.title}</h1>
         </header>
 
-        <div className="prose prose-lg dark:prose-invert max-w-none text-foreground/80">
-          {post.content.split('\n').map((paragraph, idx) => (
-            <p key={idx} className="mb-6 leading-relaxed">{paragraph}</p>
-          ))}
-        </div>
+        <div 
+          className="prose prose-lg dark:prose-invert max-w-none text-foreground/80"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
       </article>
     </div>
   );
