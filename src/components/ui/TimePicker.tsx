@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Clock, Check, ChevronUp, ChevronDown, X } from "lucide-react";
+import { Clock, Check, ChevronUp, ChevronDown, X, RefreshCw } from "lucide-react";
 
 interface TimePickerProps {
   value: string; // "HH:mm" 24h
@@ -30,6 +30,25 @@ function formatDisplay(hour: number, minute: number, hour12: boolean): string {
 export default function TimePicker({ value, onChange, label, accentColor = "primary", hour12 = false }: TimePickerProps) {
   const [open, setOpen] = useState(false);
   const [internal, setInternal] = useState(() => parseTime(value));
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   useEffect(() => {
     if (!open) setInternal(parseTime(value));
@@ -44,6 +63,11 @@ export default function TimePicker({ value, onChange, label, accentColor = "prim
     setOpen(false);
   };
 
+  const handleNow = () => {
+    const d = new Date();
+    update({ hour: d.getHours(), minute: d.getMinutes() });
+  };
+
   const update = (patch: Partial<{ hour: number, minute: number }>) => {
     setInternal(prev => ({ ...prev, ...patch }));
   };
@@ -54,23 +78,23 @@ export default function TimePicker({ value, onChange, label, accentColor = "prim
   const CounterColumn = ({ label, value, onUp, onDown, width = "w-14" }: { label: string, value: string | number, onUp: () => void, onDown: () => void, width?: string }) => (
     <div className={`flex flex-col items-center gap-1 ${width}`}>
       <button onClick={onUp} className="p-1.5 rounded-lg bg-foreground/5 hover:bg-foreground/10 text-foreground/40 hover:text-foreground transition-all active:scale-90"><ChevronUp className="w-4 h-4" /></button>
-      <div className="flex flex-col items-center leading-none">
-        <div className="text-lg font-mono font-black text-foreground">{value}</div>
-        <span className="text-[7px] font-bold uppercase tracking-widest text-foreground/20">{label}</span>
+      <div className="flex flex-col items-center relative group/col">
+        <div className="text-xl font-mono font-black text-foreground transition-all duration-200 group-hover/col:scale-110 group-hover/col:text-primary">{value}</div>
+        <span className="text-[7px] font-bold uppercase tracking-widest text-foreground/20 leading-none mt-1">{label}</span>
       </div>
       <button onClick={onDown} className="p-1.5 rounded-lg bg-foreground/5 hover:bg-foreground/10 text-foreground/40 hover:text-foreground transition-all active:scale-90"><ChevronDown className="w-4 h-4" /></button>
     </div>
   );
 
   return (
-    <div className="w-full flex flex-col gap-2">
+    <div className="w-full flex flex-col gap-2 relative" ref={containerRef}>
       {label && <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/30 ml-2">{label}</label>}
 
-      <div className={`group overflow-hidden rounded-2xl border transition-all duration-300 ${open ? `border-${accentColor}/30 bg-foreground/[0.02]` : "border-foreground/10 bg-foreground/5 hover:border-foreground/25"}`}>
+      <div className={`group relative rounded-2xl border transition-all duration-300 ${open ? `border-${accentColor}/30 bg-foreground/[0.02]` : "border-foreground/10 bg-foreground/5 hover:border-foreground/25"}`}>
         <button
           type="button"
           onClick={() => setOpen(o => !o)}
-          className="w-full flex items-center gap-3 px-4 py-3.5 text-left transition-all"
+          className="w-full flex items-center gap-3 px-4 py-3.5 text-left transition-all rounded-2xl"
         >
           <Clock className={`w-4 h-4 flex-shrink-0 ${open ? colorCls : "text-foreground/40"}`} />
           <span className={`flex-1 text-sm font-mono font-bold ${colorCls}`}>
@@ -82,7 +106,15 @@ export default function TimePicker({ value, onChange, label, accentColor = "prim
         </button>
 
         {open && (
-            <div className="p-4 border-t border-foreground/5 flex flex-col gap-4 animate-in slide-in-from-top-2 duration-300">
+            <div className="absolute top-[calc(100%+8px)] left-0 right-0 z-50 p-4 bg-card border border-foreground/10 rounded-3xl flex flex-col gap-4 animate-in slide-in-from-top-2 duration-300 shadow-2xl shadow-primary/5">
+                <div className="flex justify-end">
+                    <button 
+                        onClick={handleNow}
+                        className="text-[9px] font-black uppercase tracking-widest text-primary/60 hover:text-primary transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/5 hover:bg-primary/10"
+                    >
+                        <RefreshCw className="w-3 h-3" /> SET TO NOW
+                    </button>
+                </div>
                 <div className="flex justify-center items-center gap-2 bg-foreground/5 rounded-2xl p-4">
                     <CounterColumn label="Hr" value={pad(hour12 ? h12 : hour)} onUp={() => update({ hour: (hour + 1) % 24 })} onDown={() => update({ hour: (hour + 23) % 24 })} />
                     <div className="text-lg font-bold text-foreground/10 pb-4">:</div>

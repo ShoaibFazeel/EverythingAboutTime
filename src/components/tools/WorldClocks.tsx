@@ -147,7 +147,7 @@ export default function WorldClocks() {
             key={clock.id} 
             className="glass rounded-[2.5rem] p-8 flex flex-col gap-6 relative transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 focus-within:z-50 focus-within:ring-2 focus-within:ring-primary/20 group"
           >
-              <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-4 right-4 flex gap-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                 <button 
                   onClick={() => toggleSync(clock.id)} 
                   className={`p-2 rounded-lg ${clock.synced ? 'bg-primary/20 text-primary' : 'bg-foreground/10 text-foreground/60'}`}

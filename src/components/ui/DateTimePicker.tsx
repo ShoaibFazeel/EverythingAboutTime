@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Calendar, Clock, ChevronUp, ChevronDown, Check, X } from "lucide-react";
+import { Calendar, Clock, ChevronUp, ChevronDown, Check, X, RefreshCw } from "lucide-react";
 
 interface DateTimePickerProps {
   value: string; // "YYYY-MM-DDTHH:mm"
@@ -34,6 +34,25 @@ export default function DateTimePicker({ value, onChange, label, accentColor = "
 
   // Internal state for the picker values
   const [internal, setInternal] = useState(() => parseValue(value, dateOnly));
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   useEffect(() => {
     setMounted(true);
@@ -64,6 +83,11 @@ export default function DateTimePicker({ value, onChange, label, accentColor = "
     setOpen(false);
   };
 
+  const handleNow = () => {
+    const d = new Date();
+    update({ year: d.getFullYear(), month: d.getMonth(), day: d.getDate(), hour: d.getHours(), minute: d.getMinutes() });
+  };
+
   const colorCls = accentColor === "accent" ? "text-accent" : "text-primary";
   const bgHighlight = accentColor === "accent" ? "bg-accent" : "bg-primary";
 
@@ -76,9 +100,11 @@ export default function DateTimePicker({ value, onChange, label, accentColor = "
       >
         <ChevronUp className="w-4 h-4" />
       </button>
-      <div className="flex flex-col items-center">
-        <div className="text-lg font-mono font-black text-foreground">{value}</div>
-        <span className="text-[7px] font-bold uppercase tracking-widest text-foreground/20 leading-none">{label}</span>
+      <div className="flex flex-col items-center relative group/col">
+        <div className="absolute -top-4 left-0 right-0 h-4 bg-gradient-to-t from-transparent to-card/0 pointer-events-none" />
+        <div className="text-xl font-mono font-black text-foreground transition-all duration-200 group-hover/col:scale-110 group-hover/col:text-primary">{value}</div>
+        <span className="text-[7px] font-bold uppercase tracking-widest text-foreground/20 leading-none mt-1">{label}</span>
+        <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-b from-transparent to-card/0 pointer-events-none" />
       </div>
       <button 
         onClick={onDown}
@@ -95,15 +121,15 @@ export default function DateTimePicker({ value, onChange, label, accentColor = "
   const displayTime = mounted && value ? `${pad(hour)}:${pad(minute)}` : "--:--";
 
   return (
-    <div className="w-full flex flex-col gap-2" suppressHydrationWarning>
+    <div className="w-full flex flex-col gap-2 relative" suppressHydrationWarning ref={containerRef}>
       {label && <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/30 ml-2">{label}</label>}
 
       {/* Trigger / Expandable Input */}
-      <div className={`group overflow-hidden rounded-2xl border transition-all duration-300 ${open ? `border-${accentColor}/30 bg-foreground/[0.02]` : "border-foreground/10 bg-foreground/5 hover:border-foreground/25"}`}>
+      <div className={`group relative rounded-2xl border transition-all duration-300 ${open ? `border-${accentColor}/30 bg-foreground/[0.02]` : "border-foreground/10 bg-foreground/5 hover:border-foreground/25"}`}>
         <button
           type="button"
           onClick={() => setOpen(o => !o)}
-          className="w-full flex items-center gap-3 px-4 py-3.5 text-left transition-all"
+          className="w-full flex items-center gap-3 px-4 py-3.5 text-left transition-all rounded-2xl"
         >
           <Calendar className={`w-4 h-4 flex-shrink-0 ${open ? colorCls : "text-foreground/40"}`} />
           <span className="flex-1 text-sm font-semibold truncate">{displayDate}</span>
@@ -118,26 +144,36 @@ export default function DateTimePicker({ value, onChange, label, accentColor = "
           </div>
         </button>
 
-        {/* Inline Expansion Area */}
+        {/* Absolute Expansion Area */}
         {open && (
-            <div className="p-4 border-t border-foreground/5 flex flex-col gap-4 animate-in slide-in-from-top-2 duration-300">
-                {/* Tabs */}
-                {!dateOnly && (
-                    <div className="flex bg-foreground/10 rounded-xl p-1 mx-auto w-fit">
+            <div className="absolute top-[calc(100%+8px)] left-0 right-0 z-50 p-4 bg-card border border-foreground/10 rounded-3xl flex flex-col gap-4 animate-in slide-in-from-top-2 duration-300 shadow-2xl shadow-primary/5">
+                {/* Tabs & Quick Select */}
+                <div className="flex flex-col gap-4">
+                    <div className="flex items-center justify-between gap-4">
+                        {!dateOnly && (
+                            <div className="flex bg-foreground/10 rounded-xl p-1 w-fit">
+                                <button 
+                                    onClick={() => setTab("date")}
+                                    className={`px-6 py-1.5 rounded-lg text-[9px] font-black transition-all ${tab === "date" ? `${bgHighlight} text-white shadow-md` : "text-foreground/30 hover:text-foreground/60"}`}
+                                >
+                                    DATE
+                                </button>
+                                <button 
+                                    onClick={() => setTab("time")}
+                                    className={`px-6 py-1.5 rounded-lg text-[9px] font-black transition-all ${tab === "time" ? `${bgHighlight} text-white shadow-md` : "text-foreground/30 hover:text-foreground/60"}`}
+                                >
+                                    TIME
+                                </button>
+                            </div>
+                        )}
                         <button 
-                            onClick={() => setTab("date")}
-                            className={`px-6 py-1.5 rounded-lg text-[9px] font-black transition-all ${tab === "date" ? `${bgHighlight} text-white shadow-md` : "text-foreground/30 hover:text-foreground/60"}`}
+                            onClick={handleNow}
+                            className="text-[9px] font-black uppercase tracking-widest text-primary/60 hover:text-primary transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/5 hover:bg-primary/10 ml-auto"
                         >
-                            DATE
-                        </button>
-                        <button 
-                            onClick={() => setTab("time")}
-                            className={`px-6 py-1.5 rounded-lg text-[9px] font-black transition-all ${tab === "time" ? `${bgHighlight} text-white shadow-md` : "text-foreground/30 hover:text-foreground/60"}`}
-                        >
-                            TIME
+                            <RefreshCw className="w-3 h-3" /> SET TO NOW
                         </button>
                     </div>
-                )}
+                </div>
 
                 {/* Counter Grid */}
                 <div className="flex justify-center items-center gap-1 bg-foreground/5 rounded-2xl p-4">

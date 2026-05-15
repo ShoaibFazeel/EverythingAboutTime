@@ -99,7 +99,7 @@ export default function UnixTime() {
       <div className="glass rounded-3xl p-6 sm:p-8 text-center overflow-hidden">
         <div className="text-[10px] sm:text-xs uppercase tracking-widest font-bold text-foreground/40 mb-4">Current Unix Timestamp (Live)</div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-2">
-          <span className="text-4xl min-[400px]:text-5xl md:text-6xl font-mono font-extrabold tracking-tighter text-primary tabular-nums break-all leading-none">
+          <span className="text-3xl min-[400px]:text-4xl md:text-6xl font-mono font-extrabold tracking-tighter text-primary tabular-nums break-all leading-none">
             {unixSeconds?.toLocaleString() ?? "—"}
           </span>
           <CopyButton value={String(unixSeconds ?? "")} />
