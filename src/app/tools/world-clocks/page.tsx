@@ -32,7 +32,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 max-w-5xl">
+    <div className="w-full max-w-5xl mx-auto px-4">
       <div className="mb-8">
         <h1 className="text-4xl font-bold tracking-tight mb-2">World Clocks</h1>
         <p className="text-lg text-foreground/70">Observe multiple time zones and adjust one to instantly see the relative time everywhere else.</p>

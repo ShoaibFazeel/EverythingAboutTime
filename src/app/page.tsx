@@ -54,10 +54,10 @@ const categories = [
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 max-w-6xl">
-      <div className="text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">Master Your <span className="text-primary">Time</span></h1>
-        <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto px-4">
+      <div className="text-center mb-12 sm:mb-16">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 leading-tight">Master Your <span className="text-primary">Time</span></h1>
+        <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mx-auto">
           A suite of fast, minimal time-management tools designed for clarity, productivity, and focus.
         </p>
       </div>
@@ -69,7 +69,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tight">{cat.title}</h2>
               <p className="text-foreground/60">{cat.description}</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
               {cat.tools.map((tool) => (
                 <Link href={tool.path} key={tool.path} className="group block h-full">
                   <div className="glass rounded-2xl p-6 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/50 flex items-center justify-between">

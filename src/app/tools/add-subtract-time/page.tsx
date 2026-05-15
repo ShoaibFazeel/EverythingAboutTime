@@ -32,10 +32,10 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 max-w-6xl">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Add or Subtract Time</h1>
-        <p className="text-lg text-foreground/70 max-w-2xl">Use this calculator to easily find out what date and time it will be if you add or subtract an exact duration.</p>
+    <div className="w-full max-w-6xl mx-auto px-4">
+      <div className="mb-12 text-center sm:text-left">
+        <h1 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4">Add or Subtract Time</h1>
+        <p className="text-lg text-foreground/70 max-w-2xl mx-auto sm:mx-0">Use this calculator to easily find out what date and time it will be if you add or subtract an exact duration.</p>
       </div>
       <AddSubtractTime />
 

@@ -93,20 +93,20 @@ export default function UnixTime() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8" suppressHydrationWarning>
+    <div className="w-full max-w-4xl mx-auto space-y-8" suppressHydrationWarning>
 
       {/* Live Unix Counter */}
-      <div className="glass rounded-3xl p-8 text-center">
-        <div className="text-xs uppercase tracking-widest font-bold text-foreground/40 mb-4">Current Unix Timestamp (Live)</div>
-        <div className="flex items-center justify-center gap-3 mb-2">
-          <span className="text-5xl md:text-6xl font-mono font-extrabold tracking-tighter text-primary tabular-nums">
+      <div className="glass rounded-3xl p-6 sm:p-8 text-center overflow-hidden">
+        <div className="text-[10px] sm:text-xs uppercase tracking-widest font-bold text-foreground/40 mb-4">Current Unix Timestamp (Live)</div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-2">
+          <span className="text-4xl min-[400px]:text-5xl md:text-6xl font-mono font-extrabold tracking-tighter text-primary tabular-nums break-all leading-none">
             {unixSeconds?.toLocaleString() ?? "—"}
           </span>
           <CopyButton value={String(unixSeconds ?? "")} />
         </div>
-        <div className="text-sm text-foreground/50 font-mono mb-6 flex items-center justify-center gap-2">
-          <span className="text-foreground/40">ms:</span>
-          <span>{unixMs?.toLocaleString() ?? "—"}</span>
+        <div className="text-xs sm:text-sm text-foreground/50 font-mono mb-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+          <span className="text-foreground/40 shrink-0">ms:</span>
+          <span className="break-all">{unixMs?.toLocaleString() ?? "—"}</span>
           <CopyButton value={String(unixMs ?? "")} />
         </div>
 
@@ -147,13 +147,13 @@ export default function UnixTime() {
               {/* GMT row */}
               <div className="bg-foreground/5 rounded-2xl p-4 text-sm font-mono relative">
                 <span className="absolute top-2 left-3 text-[10px] font-bold uppercase tracking-widest text-foreground/40 select-none">GMT</span>
-                <div className="mt-4 pr-10 leading-snug break-all">{convertedUnixResult.gmt}</div>
+                <div className="mt-5 pr-10 leading-snug break-all">{convertedUnixResult.gmt}</div>
                 <div className="absolute top-3 right-3"><CopyButton value={convertedUnixResult.gmt} /></div>
               </div>
               {/* Local row */}
               <div className="bg-foreground/5 rounded-2xl p-4 text-sm font-mono relative">
                 <span className="absolute top-2 left-3 text-[10px] font-bold uppercase tracking-widest text-foreground/40 select-none">Local</span>
-                <div className="mt-4 pr-10 leading-snug break-all">{convertedUnixResult.local}</div>
+                <div className="mt-5 pr-10 leading-snug break-all">{convertedUnixResult.local}</div>
                 <div className="absolute top-3 right-3"><CopyButton value={convertedUnixResult.local} /></div>
               </div>
             </div>
@@ -198,14 +198,14 @@ export default function UnixTime() {
               )}
               <div className="bg-foreground/5 rounded-2xl p-4 text-sm font-mono leading-relaxed relative">
                 <div className="flex justify-between items-start">
-                  <div className="flex flex-col gap-2">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 block">Seconds</span>
-                      <span className="text-base font-extrabold tabular-nums">{convertedHumanResult.seconds}</span>
+                  <div className="flex flex-col gap-3">
+                    <div className="break-all">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 block mb-1">Seconds</span>
+                      <span className="text-base font-extrabold tabular-nums break-all">{convertedHumanResult.seconds}</span>
                     </div>
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 block">Milliseconds</span>
-                      <span className="text-base font-extrabold tabular-nums">{convertedHumanResult.ms}</span>
+                    <div className="break-all">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 block mb-1">Milliseconds</span>
+                      <span className="text-base font-extrabold tabular-nums break-all">{convertedHumanResult.ms}</span>
                     </div>
                   </div>
                   <CopyButton value={`Seconds: ${convertedHumanResult.seconds}\nMilliseconds: ${convertedHumanResult.ms}`} />
