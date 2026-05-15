@@ -123,7 +123,7 @@ export default function WorldClocks() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {clocks.map((clock) => {
+        {clocks.map((clock, index) => {
           const effectiveTime = new Date((clock.synced ? baseTimeMs : Date.now()) + clock.manualOffsetMs);
           
           let formattedTime = "";
@@ -145,7 +145,8 @@ export default function WorldClocks() {
           return (
             <div 
             key={clock.id} 
-            className="glass rounded-[2.5rem] p-8 flex flex-col gap-6 relative transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 focus-within:z-30 focus-within:ring-2 focus-within:ring-primary/20 group"
+            style={{ zIndex: clocks.length - index }}
+            className="glass rounded-[2.5rem] p-8 flex flex-col gap-6 relative transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 focus-within:ring-2 focus-within:ring-primary/20 group"
           >
               <div className="absolute top-4 right-4 flex gap-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                 <button 

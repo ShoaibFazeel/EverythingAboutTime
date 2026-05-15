@@ -91,7 +91,7 @@ export default function TimeDifference() {
   return (
     <div className="grid gap-8 lg:grid-cols-2">
       
-      <div className="glass rounded-3xl p-8 flex flex-col gap-6">
+      <div className="glass rounded-3xl p-8 flex flex-col gap-6 relative z-10">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold">Select Dates</h2>
           
@@ -137,7 +137,7 @@ export default function TimeDifference() {
         )}
       </div>
 
-      <div className="glass rounded-3xl p-8 flex flex-col justify-center">
+      <div className="glass rounded-3xl p-8 flex flex-col justify-center relative z-0">
         {!isValid ? (
           <div className="text-center text-foreground/50 py-12">
             Please enter valid dates to see the difference.

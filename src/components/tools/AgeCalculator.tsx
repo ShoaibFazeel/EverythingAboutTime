@@ -50,7 +50,7 @@ export default function AgeCalculator() {
 
   return (
     <div className="grid gap-8 lg:grid-cols-2">
-      <div className="glass rounded-3xl p-8 flex flex-col gap-8">
+      <div className="glass rounded-3xl p-8 flex flex-col gap-8 relative z-10">
         <div className="flex items-center gap-4 mb-4">
           <Activity className="w-8 h-8 text-primary" />
           <h2 className="text-2xl font-bold">Age Calculator</h2>

@@ -55,7 +55,7 @@ export default function SleepCalculator() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
 
-      <div className="glass rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 justify-between">
+      <div className="glass rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 justify-between relative z-10">
         <div className="flex-1 space-y-4">
           <div className="flex bg-foreground/5 p-1 rounded-2xl w-fit">
             <button

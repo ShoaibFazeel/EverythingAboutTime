@@ -124,7 +124,7 @@ export default function UnixTime() {
       <div className="grid grid-cols-1 md:grid-cols-[13fr_7fr] gap-6">
 
         {/* Unix → Human */}
-        <div className="glass rounded-3xl p-6 flex flex-col gap-4">
+        <div className="glass rounded-3xl p-6 flex flex-col gap-4 relative z-[20]">
           <h3 className="text-lg font-bold">Unix → Human Date</h3>
           <input
             type="text"
@@ -161,7 +161,7 @@ export default function UnixTime() {
         </div>
 
         {/* Human → Unix */}
-        <div className="glass rounded-3xl p-6 flex flex-col gap-4">
+        <div className="glass rounded-3xl p-6 flex flex-col gap-4 relative z-[10]">
           <h3 className="text-lg font-bold">Human Date → Unix</h3>
 
           <DateTimePicker
